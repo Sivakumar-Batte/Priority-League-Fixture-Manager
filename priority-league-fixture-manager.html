@@ -1032,16 +1032,6 @@ input[type=text]:not(:placeholder-shown){border-color:var(--accent)}
 
     <div id="wkBanner" class="empty-state">Duplicate verification has not been performed &mdash; no worked-fixture data supplied yet.</div>
 
-    <div id="wkParsed" hidden>
-      <h3>Parsed Worked Fixtures (preview)</h3>
-      <p class="hint" id="wkParsedHint"></p>
-      <div class="table-wrap"><table><thead><tr><th>#</th><th>Sport</th><th>Date</th><th>Time</th><th>Country</th><th>League</th><th>Home</th><th>Away</th><th>Event ID</th></tr></thead><tbody id="wkParsedBody"></tbody></table></div>
-      <div id="wkSkippedWrap" hidden>
-        <h3>Skipped rows</h3>
-        <div class="table-wrap"><table><thead><tr><th>Row</th><th>Reason</th><th>Text</th></tr></thead><tbody id="wkSkippedBody"></tbody></table></div>
-      </div>
-    </div>
-
     <div id="wkResults" hidden>
       <div class="statusline">
         <div class="stat"><span class="count">Current priority fixtures</span><strong id="wkStatTotal">0</strong></div>
@@ -1105,6 +1095,19 @@ input[type=text]:not(:placeholder-shown){border-color:var(--accent)}
           <th>Classification</th><th>Why excluded</th>
         </tr></thead><tbody id="wkExclBody"></tbody></table></div>
       </section>
+    </div>
+
+    <!-- Parsed Worked Fixtures preview: now BELOW the classification, collapsible (native <details>). -->
+    <div id="wkParsed" hidden>
+      <details id="wkParsedDetails" class="wk-collapsible" open>
+        <summary><h3 style="display:inline;margin:0">Parsed Worked Fixtures (preview)</h3> <span class="hint">(click to collapse / expand)</span></summary>
+        <p class="hint" id="wkParsedHint"></p>
+        <div class="table-wrap"><table><thead><tr><th>#</th><th>Sport</th><th>Date</th><th>Time</th><th>Country</th><th>League</th><th>Home</th><th>Away</th><th>Event ID</th></tr></thead><tbody id="wkParsedBody"></tbody></table></div>
+        <div id="wkSkippedWrap" hidden>
+          <h3>Skipped rows</h3>
+          <div class="table-wrap"><table><thead><tr><th>Row</th><th>Reason</th><th>Text</th></tr></thead><tbody id="wkSkippedBody"></tbody></table></div>
+        </div>
+      </details>
     </div>
   </section>
 
